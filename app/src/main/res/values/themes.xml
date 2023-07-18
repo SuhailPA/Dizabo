@@ -3,7 +3,25 @@
     <style name="Base.Theme.Dizabo" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Change the text color to yellow -->
+        <item name="android:textColor">#EED601</item>
+        <!-- Change the default button color to yellow -->
+        <item name="colorPrimary">#EED601</item>
     </style>
 
     <style name="Theme.Dizabo" parent="Base.Theme.Dizabo" />
+
+    <style name="TextInputOutlinedStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="boxStrokeColor">#FFEB3B</item>
+        <item name="android:textColorHint">@color/black</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="hintTextColor">@color/white</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/dp_25</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/dp_25</item>
+        <item name="boxCornerRadiusTopStart">@dimen/dp_25</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/dp_25</item>
+    </style>
+
+    <dimen name="dp_25">25dp</dimen>
 </resources>

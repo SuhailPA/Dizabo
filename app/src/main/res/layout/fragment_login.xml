@@ -1,14 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     android:layout_height="match_parent"
+    android:layout_margin="@dimen/dp_25"
     tools:context=".ui.LoginFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/tv_hello_there"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/hello_there"
+        android:textAlignment="center"
+        android:textSize="@dimen/heading_font_size"
+        android:textStyle="bold" />
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:text="@string/login_to_continue"
+        android:textAlignment="center"
+        android:layout_margin="10dp"
+        android:textSize="15sp"/>
 
-</FrameLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/person"
+        android:layout_margin="10dp"
+        style="@style/TextInputOutlinedStyle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/userEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="@string/email" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/baseline_lock_24"
+        app:passwordToggleEnabled="true"
+        android:layout_margin="10dp"
+        style="@style/TextInputOutlinedStyle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/userPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:hint="@string/password" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text= "@string/forgot_password"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:textSize="15sp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/signInButton"
+        app:cornerRadius="@dimen/dp_25"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_in"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text= "Register"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_margin="10dp"
+        android:textSize="15sp"/>
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

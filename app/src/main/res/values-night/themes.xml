@@ -4,4 +4,6 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <dimen name="dp_25">25dp</dimen>
 </resources>
