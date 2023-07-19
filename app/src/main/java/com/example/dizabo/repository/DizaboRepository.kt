@@ -5,6 +5,7 @@ import com.example.dizabo.api.DizaboAPI
 import com.example.dizabo.data.LoginRequestBody
 import com.example.dizabo.data.getalldata.HomeResponseBody
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 import retrofit2.Response
 import javax.inject.Inject
 
@@ -16,7 +17,7 @@ class DizaboRepository @Inject constructor(
     suspend fun loginUser(loginRequestBody: LoginRequestBody) =
         dizaboAPI.loginUser(loginRequestBody)
 
-    suspend fun homeGetAllData(): Response<HomeResponseBody> =
-        dizaboAPI.getAllData(pref.getString("userToken", "").toString())
+    suspend fun homeGetAllData(): Flow<Response<HomeResponseBody>> =
+        flow { emit(dizaboAPI.getAllData(pref.getString("userToken", "").toString())) }
 
 }
