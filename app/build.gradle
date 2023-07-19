@@ -67,6 +67,8 @@ dependencies {
     //Library for Image Coil
     implementation 'io.coil-kt:coil:2.0.0'
 
+    //for OTP View
+    implementation 'io.github.chaosleung:pinview:1.4.4'
 
 
     implementation 'androidx.core:core-ktx:1.8.0'

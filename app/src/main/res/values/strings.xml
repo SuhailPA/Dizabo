@@ -17,4 +17,6 @@
     <string name="_10000_aed">10000 AED</string>
     <string name="apply_now"><![CDATA[Apply Now >]]></string>
     <string name="get_20_profit">Get 20% profit</string>
+    <string name="enter_otp_received">Enter OTP Received at %s</string>
+    <string name="verify_otp">Verify OTP</string>
 </resources>
