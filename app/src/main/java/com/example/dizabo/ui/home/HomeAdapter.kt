@@ -13,6 +13,7 @@ import com.example.dizabo.databinding.HomeItemLayoutBinding
 class HomeAdapter() :
     RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
+    private var onItemClickListner: ((Data) -> Unit)? = null
 
     inner class HomeViewHolder(private val binding: HomeItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -21,6 +22,7 @@ class HomeAdapter() :
                 crossfade(true)
                 memoryCachePolicy(CachePolicy.ENABLED)
             }
+            binding.itemView.setOnClickListener { onItemClickListner?.let { it(item) } }
         }
     }
 
@@ -49,5 +51,8 @@ class HomeAdapter() :
     }
     val differ = AsyncListDiffer(this, diffCallBack)
 
+    fun setOnItemClickListener(listener: (Data) -> Unit) {
+        onItemClickListner = listener
+    }
 
 }

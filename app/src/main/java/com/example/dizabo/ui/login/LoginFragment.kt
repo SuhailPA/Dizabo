@@ -1,4 +1,4 @@
-package com.example.dizabo.ui
+package com.example.dizabo.ui.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,12 +9,9 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
-import com.example.dizabo.R
 import com.example.dizabo.data.LoginRequestBody
 import com.example.dizabo.databinding.FragmentLoginBinding
-import com.example.dizabo.viewModel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
@@ -43,6 +40,12 @@ class LoginFragment : Fragment() {
                         userPassword.editText?.text.toString()
                     )
                     userLoginFlow(userDetails)
+                } else {
+                    Toast.makeText(
+                        context,
+                        "Kindly enter both email & password",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
             registerButton.setOnClickListener {

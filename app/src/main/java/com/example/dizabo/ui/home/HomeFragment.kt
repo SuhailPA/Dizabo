@@ -5,12 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.dizabo.R
 import com.example.dizabo.data.getalldata.Data
 import com.example.dizabo.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
@@ -36,6 +40,9 @@ class HomeFragment : Fragment() {
         }
         homeViewModel.homeItems.observe(viewLifecycleOwner) {
             homeAdapter.differ.submitList(it)
+        }
+        homeAdapter.setOnItemClickListener { data ->
+            Toast.makeText(context, data.strTitle ?: "Title is missing", Toast.LENGTH_SHORT).show()
         }
     }
 

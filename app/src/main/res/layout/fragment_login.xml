@@ -8,7 +8,7 @@
     android:gravity="center"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/dp_25"
-    tools:context=".ui.LoginFragment">
+    tools:context=".ui.login.LoginFragment">
 
     <TextView
         android:id="@+id/tv_hello_there"

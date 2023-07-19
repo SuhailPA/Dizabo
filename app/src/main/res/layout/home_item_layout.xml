@@ -8,6 +8,7 @@
     app:cardCornerRadius="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemView"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:padding="5dp">

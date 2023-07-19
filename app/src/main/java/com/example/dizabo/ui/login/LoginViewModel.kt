@@ -1,4 +1,4 @@
-package com.example.dizabo.viewModel
+package com.example.dizabo.ui.login
 
 import android.content.SharedPreferences
 import androidx.lifecycle.ViewModel
@@ -31,6 +31,8 @@ class LoginViewModel @Inject constructor(
                 emit(Result.success(loginResponse))
             } else emit(Result.failure(Exception("Login Failed")))
 
+        } else {
+            emit(Result.failure(Exception("Wrong credentials or user not registered")))
         }
     }
 
