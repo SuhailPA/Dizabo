@@ -16,8 +16,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    private val repository: DizaboRepository,
-    private val pref: SharedPreferences
+    private val repository: DizaboRepository, private val pref: SharedPreferences
 ) : ViewModel() {
 
     fun loginUser(loginRequestBody: LoginRequestBody): Flow<Result<LoginResponseBody>> = flow {

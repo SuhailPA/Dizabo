@@ -21,7 +21,7 @@ interface DizaboAPI {
     suspend fun loginUser(@Body loginRequestBody: LoginRequestBody): Response<LoginResponseBody>
 
     @GET("app/investment_plan/get_all")
-    suspend fun getAllData(@Header("Authorization")token : String) : Response<HomeResponseBody>
+    suspend fun getAllData(@Header("Authorization") token: String): Response<HomeResponseBody>
 
 
 }

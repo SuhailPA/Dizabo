@@ -12,7 +12,7 @@ import com.example.dizabo.databinding.FragmentRegisterBinding
 
 class RegisterFragment : Fragment() {
 
-    private var binding : FragmentRegisterBinding? = null
+    private var binding: FragmentRegisterBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +25,8 @@ class RegisterFragment : Fragment() {
 
     private fun initUI() {
         binding?.signUpButton?.setOnClickListener {
-            binding?.root?.findNavController()?.navigate(RegisterFragmentDirections.actionRegisterFragmentToOtpFragment())
+            binding?.root?.findNavController()
+                ?.navigate(RegisterFragmentDirections.actionRegisterFragmentToOtpFragment())
         }
     }
 
