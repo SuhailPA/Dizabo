@@ -21,7 +21,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
 
-    private lateinit var binding: FragmentLoginBinding
+    private var binding: FragmentLoginBinding? = null
     private val loginViewModel: LoginViewModel by viewModels()
 
     override fun onCreateView(
@@ -31,11 +31,11 @@ class LoginFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         initUi()
-        return binding.root
+        return binding?.root
     }
 
     private fun initUi() {
-        binding.apply {
+        binding?.apply {
             signInButton.setOnClickListener {
                 if (userEmail.editText?.text?.isNotEmpty() == true && userPassword.editText?.text?.isNotEmpty() == true) {
                     val userDetails = LoginRequestBody(
@@ -53,12 +53,17 @@ class LoginFragment : Fragment() {
 
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
+
     private fun userLoginFlow(userDet: LoginRequestBody) {
         lifecycleScope.launch {
             loginViewModel.loginUser(userDet).collect { result ->
                 if (result.isSuccess) {
-                    binding.root.findNavController()
-                        .navigate(LoginFragmentDirections.actionLoginFragmentToOtpFragment())
+                    binding?.root?.findNavController()
+                        ?.navigate(LoginFragmentDirections.actionLoginFragmentToOtpFragment())
                 } else {
                     Toast.makeText(context, "Login Failed", Toast.LENGTH_SHORT).show()
                 }

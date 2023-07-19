@@ -41,6 +41,10 @@ android {
 }
 
 dependencies {
+
+    //For Encrypted Shared Preference
+    implementation("androidx.security:security-crypto:1.0.0")
+    
     implementation 'androidx.fragment:fragment-ktx:1.6.0'
 
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
