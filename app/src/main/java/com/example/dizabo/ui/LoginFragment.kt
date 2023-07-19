@@ -63,7 +63,7 @@ class LoginFragment : Fragment() {
             loginViewModel.loginUser(userDet).collect { result ->
                 if (result.isSuccess) {
                     binding?.root?.findNavController()
-                        ?.navigate(LoginFragmentDirections.actionLoginFragmentToOtpFragment())
+                        ?.navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
                 } else {
                     Toast.makeText(context, "Login Failed", Toast.LENGTH_SHORT).show()
                 }

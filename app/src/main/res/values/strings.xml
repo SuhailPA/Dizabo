@@ -13,4 +13,8 @@
     <string name="complete_registration">Complete registration</string>
     <string name="name">Name</string>
     <string name="phone">Phone</string>
+    <string name="our_investment_plans">Our Investment Plans</string>
+    <string name="_10000_aed">10000 AED</string>
+    <string name="apply_now"><![CDATA[Apply Now >]]></string>
+    <string name="get_20_profit">Get 20% profit</string>
 </resources>
